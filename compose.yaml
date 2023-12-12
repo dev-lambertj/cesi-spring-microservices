@@ -9,6 +9,14 @@ services:
       - "8761:8761"
     volumes:
       - ./discovery:/app
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.125"
+          memory: "128M"
     working_dir: /app
     command: "mvn spring-boot:run"
 
@@ -22,6 +30,14 @@ services:
       - "8088:8088"
     volumes:
       - ./gateway:/app
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.125"
+          memory: "128M"
     working_dir: /app
     command: "mvn spring-boot:run"
 
@@ -34,6 +50,14 @@ services:
       - "8081:8081"
     volumes:
       - ./user:/app
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.125"
+          memory: "128M"
     working_dir: /app
     command: "mvn spring-boot:run"
 
@@ -46,6 +70,14 @@ services:
       - "8082:8082"
     volumes:
       - ./article:/app
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.125"
+          memory: "128M"
     working_dir: /app
     command: "mvn spring-boot:run"
 
@@ -56,6 +88,14 @@ services:
       - ms-discovery
     ports:
       - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: "256M"
+        reservations:
+          cpus: "0.125"
+          memory: "128M"
     environment:
       POSTGRES_DB: blog
       POSTGRES_USER: admin

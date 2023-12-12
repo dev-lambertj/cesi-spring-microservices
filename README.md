@@ -1,3 +1,18 @@
+# Spring Boot Microservices with Gateway
+
+# Description
+
+This project consists in 2 microservices, each one dedicated to the management of one resource and exposing a RESTful
+API for its resource:
+
+- user, which manages basic users (username, firstName, lastName, createdAt, updatedAt)
+- article, which manages basic blog articles (title, description).
+
+It is also composed of a gateway which redirect requests to these microservices and receive requests on a single URI.
+
+Finally, there is also a discovery service based on Eureka that discovers existing services which implement some
+configuration related to this service.
+
 # Requirements
 
 You will need the following to start project:
